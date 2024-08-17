@@ -141,6 +141,29 @@ class ProductResource extends Resource
 
                 Forms\Components\Group::make()
                     ->schema([
+                        Forms\Components\Section::make('Test jalali issue')
+                            ->schema([
+                                Forms\Components\DateTimePicker::make('test_datetime_1')
+                                    ->label('Test Datetime 1 - jalali')
+                                    ->default(now()->subMonths(1))
+                                    ->jalali()
+                                    ->required()
+                                    ->native(false)
+                                ,
+                                Forms\Components\DateTimePicker::make('test_datetime_2')
+                                    ->label('Test Datetime 2 - jalali: ignored')
+                                    ->default(now()->subMonths(1))
+                                    ->jalali(ignore: true)
+                                    ->required()
+                                    ->native(false)
+                                ,
+                                Forms\Components\DateTimePicker::make('test_datetime_3')
+                                    ->label('Test Datetime 3')
+                                    ->default(now()->subMonths(1))
+                                    ->required()
+                                    ->native(false)
+                                ,
+                            ]),
                         Forms\Components\Section::make('Status')
                             ->schema([
                                 Forms\Components\Toggle::make('is_visible')

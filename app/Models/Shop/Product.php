@@ -30,6 +30,9 @@ class Product extends Model implements HasMedia
         'backorder' => 'boolean',
         'requires_shipping' => 'boolean',
         'published_at' => 'date',
+        'test_datetime_1' => 'datetime',
+        'test_datetime_2' => 'datetime',
+        'test_datetime_3' => 'datetime',
     ];
 
     /** @return BelongsTo<Brand,self> */
